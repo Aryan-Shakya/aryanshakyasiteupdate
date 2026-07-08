@@ -1,0 +1,151 @@
+{
+  "site": {
+    "title": "Aryan Shakya — Developer & Creator",
+    "description": "Full-stack developer, creative coder & IoT engineer building digital experiences that shift perception.",
+    "url": "https://www.aryanshakya.in",
+    "ogImage": "/images/aryan.png",
+    "keywords": ["Aryan Shakya", "Full Stack Developer", "IoT Engineer", "Creative Coder", "Next.js Developer", "Portfolio", "Web Developer India"]
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Aryan Shakya",
+    "tagline": "Developer · Creative Coder · IoT Engineer",
+    "description": "I craft digital experiences where engineering meets design. From full-stack web applications to IoT systems and immersive 3D interfaces.",
+    "cta": "Explore My Universe",
+    "available": true,
+    "location": "Based in India"
+  },
+  "about": {
+    "label": "01 — ABOUT",
+    "headline": ["I CRAFT DIGITAL", "EXPERIENCES WHERE", "ENGINEERING", "MEETS DESIGN"],
+    "accentLine": 2,
+    "description": "From full-stack web applications to IoT systems and immersive 3D interfaces — I build things at the intersection of technology and creativity. Currently exploring AI tools like Flow and Whisk to push creative boundaries.",
+    "stats": [
+      { "value": "5", "suffix": "+", "label": "Projects" },
+      { "value": "100", "suffix": "+", "label": "Commits" },
+      { "value": "2", "suffix": "yr", "label": "Experience" }
+    ]
+  },
+  "experience": [
+    {
+      "id": "exp-1",
+      "role": "Web Development Intern",
+      "company": "Votiv Labs",
+      "companyUrl": "https://www.votivlabs.in",
+      "period": "Oct 2024 – Present",
+      "description": "Contributing to enterprise-grade web solutions. Building responsive front-ends, integrating REST APIs, and optimizing web performance.",
+      "skills": ["React", "Next.js", "Node.js", "REST APIs"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "title": "FlowRead",
+      "description": "An intelligent reading platform with custom themes, file uploads and user authentication. Built for focus and comprehension.",
+      "tags": ["Next.js", "MongoDB", "Vercel"],
+      "url": "https://flowread.aryanshakya.in/",
+      "emoji": "📖",
+      "gradient": ["#0a192f", "#172a45"],
+      "featured": true
+    },
+    {
+      "id": "proj-2",
+      "title": "Smart Sensor Dashboard",
+      "description": "Real-time IoT dashboard visualising live sensor data from ESP32 devices via Firebase. Connected hardware to the web.",
+      "tags": ["ESP32", "Firebase", "IoT"],
+      "url": "https://esp-projects-92383.web.app/",
+      "emoji": "🔌",
+      "gradient": ["#1a0800", "#3d1500"],
+      "featured": true
+    },
+    {
+      "id": "proj-3",
+      "title": "aryanshakya.in",
+      "description": "A 3D immersive portfolio with Three.js particles, GSAP scroll animations, and a cinematic design system.",
+      "tags": ["Three.js", "GSAP", "WebGL"],
+      "url": "https://www.aryanshakya.in",
+      "emoji": "✦",
+      "gradient": ["#0d0010", "#1a0030"],
+      "featured": true
+    }
+  ],
+  "skills": [
+    { "category": "Frontend", "items": ["React", "Next.js", "HTML5", "CSS3", "JavaScript", "Three.js", "GSAP"] },
+    { "category": "Backend", "items": ["Node.js", "Express.js", "Python", "REST APIs"] },
+    { "category": "Database", "items": ["MongoDB", "Firebase", "SQL"] },
+    { "category": "IoT & Hardware", "items": ["ESP32", "Teensy", "Arduino", "Sensors"] },
+    { "category": "Tools & Platforms", "items": ["Git", "GitHub", "Vercel", "VS Code", "Figma", "Postman"] },
+    { "category": "AI & Creative", "items": ["Antigravity", "Vibe Coding", "Flow", "Whisk"] }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech in Computer Science (IoT & Cyber Security)",
+      "institution": "Thakur College of Engineering and Technology",
+      "period": "2023 – 2027 (Expected)",
+      "location": "Mumbai, India"
+    },
+    {
+      "degree": "Higher Secondary Certificate (HSC)",
+      "institution": "IES Orion ICSE School",
+      "period": "Completed 2023",
+      "location": "Mumbai, India"
+    }
+  ],
+  "contact": {
+    "email": "aryanshakyaofficial.mail@gmail.com",
+    "whatsapp": "https://wa.me/919322311917",
+    "github": "https://github.com/Aryan-Shakya",
+    "linkedin": "https://www.linkedin.com/in/aryan-shakya-73035a385/",
+    "instagram": "https://www.instagram.com/aryanshakya______/",
+    "website": "https://www.aryanshakya.in"
+  },
+  "terminal": {
+    "commands": {
+      "help": "Available commands: about, skills, projects, education, contact, experience, clear",
+      "about": "Hi! I'm Aryan Shakya — a Full-Stack Developer, Creative Coder & IoT Engineer based in India. I build things at the intersection of technology and creativity.",
+      "skills": "Frontend: React, Next.js, Three.js, GSAP | Backend: Node.js, Python | IoT: ESP32, Teensy | Tools: Git, Vercel, Firebase",
+      "projects": "1. FlowRead — Intelligent reading platform (Next.js + MongoDB)\n2. Smart Sensor Dashboard — Real-time IoT data viz (ESP32 + Firebase)\n3. aryanshakya.in — 3D immersive portfolio (Three.js + GSAP)",
+      "education": "B.Tech CSE (IoT & Cyber Security) @ Thakur College of Engineering, Mumbai (2023-2027)",
+      "contact": "Email: aryanshakyaofficial.mail@gmail.com | GitHub: github.com/Aryan-Shakya | LinkedIn: linkedin.com/in/aryan-shakya-73035a385",
+      "experience": "Web Development Intern @ Votiv Labs (Oct 2024 – Present) — Building enterprise-grade web solutions with React, Next.js & Node.js"
+    },
+    "welcomeMessage": "Welcome to Aryan's Terminal v2.0 — Type 'help' for available commands."
+  },
+  "blogs": [
+    {
+      "id": "blog-1",
+      "slug": "getting-started-with-iot-and-esp32",
+      "title": "Getting Started with IoT and ESP32",
+      "excerpt": "A beginner-friendly guide to building your first IoT project using an ESP32 microcontroller and Firebase.",
+      "content": "# Getting Started with IoT and ESP32\n\nThe Internet of Things (IoT) is transforming how we interact with the physical world. In this post, I'll walk you through building your first IoT project using an ESP32 microcontroller.\n\n## What You'll Need\n\n- ESP32 Development Board\n- DHT11 Temperature & Humidity Sensor\n- Breadboard & Jumper Wires\n- USB Cable\n- Arduino IDE\n\n## Setting Up\n\nFirst, install the ESP32 board package in Arduino IDE. Go to **File > Preferences** and add the ESP32 board manager URL.\n\n## Reading Sensor Data\n\n```cpp\n#include <DHT.h>\n#define DHTPIN 4\n#define DHTTYPE DHT11\nDHT dht(DHTPIN, DHTTYPE);\n\nvoid setup() {\n  Serial.begin(115200);\n  dht.begin();\n}\n\nvoid loop() {\n  float humidity = dht.readHumidity();\n  float temperature = dht.readTemperature();\n  Serial.printf(\"Temp: %.1f°C, Humidity: %.1f%%\\n\", temperature, humidity);\n  delay(2000);\n}\n```\n\n## Connecting to Firebase\n\nOnce you can read sensor data, the next step is sending it to Firebase for real-time visualization. This is exactly what I built for my Smart Sensor Dashboard project!\n\nStay tuned for Part 2 where we'll set up the Firebase connection and build a real-time web dashboard.",
+      "category": "IoT",
+      "tags": ["ESP32", "IoT", "Firebase", "Arduino"],
+      "author": "Aryan Shakya",
+      "publishedAt": "2025-03-15",
+      "published": true,
+      "coverEmoji": "🔌"
+    },
+    {
+      "id": "blog-2",
+      "slug": "building-3d-web-experiences-with-threejs",
+      "title": "Building 3D Web Experiences with Three.js",
+      "excerpt": "How I used Three.js and GSAP to create an immersive 3D portfolio with particle systems and orbital animations.",
+      "content": "# Building 3D Web Experiences with Three.js\n\nWhen I decided to rebuild my portfolio, I wanted something that felt alive — not just a static page but an experience. That's when I discovered Three.js.\n\n## Why Three.js?\n\nThree.js makes WebGL accessible. Instead of writing raw shaders, you work with a clean API for scenes, cameras, geometries, and materials.\n\n## The Orbital Scene\n\nThe hero section of my portfolio features a wireframe icosahedron surrounded by orbital rings and floating particles — all reacting to mouse movement.\n\n```javascript\nconst icoGeo = new THREE.IcosahedronGeometry(1.5, 1);\nconst icoMat = new THREE.MeshBasicMaterial({\n  color: 0xc8ff00,\n  wireframe: true,\n  transparent: true,\n  opacity: 0.22,\n});\nconst ico = new THREE.Mesh(icoGeo, icoMat);\nscene.add(ico);\n```\n\n## Adding Interactivity\n\nMouse-driven parallax makes the scene feel responsive. I track the mouse position and smoothly interpolate the camera position.\n\n## Performance Tips\n\n- Use `requestAnimationFrame` for smooth 60fps\n- Limit `pixelRatio` to 2 for high-DPI screens\n- Keep polygon counts low for wireframes\n- Use `BufferGeometry` for particle systems\n\nThe result? A portfolio that visitors actually want to explore.",
+      "category": "Web Dev",
+      "tags": ["Three.js", "WebGL", "GSAP", "Portfolio"],
+      "author": "Aryan Shakya",
+      "publishedAt": "2025-05-20",
+      "published": true,
+      "coverEmoji": "🎨"
+    }
+  ],
+  "theme": {
+    "mode": "warm",
+    "primaryColor": "#FF6B35",
+    "accentColor": "#F7C948",
+    "backgroundColor": "#0D0D0D",
+    "surfaceColor": "#1A1A2E",
+    "textColor": "#F0ECE4",
+    "mutedColor": "rgba(240,236,228,0.5)"
+  }
+}

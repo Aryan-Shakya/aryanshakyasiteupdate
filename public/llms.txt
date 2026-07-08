@@ -1,0 +1,33 @@
+# Aryan Shakya — Developer, Creative Coder & IoT Engineer
+
+> Full-stack developer, creative coder, and IoT engineer based in India. Currently studying B.Tech in Computer Science and Engineering (2028 expected graduation from D.Y. Patil International University). Experienced in developing integrated hardware-software systems and building scalable web applications.
+
+## Contact & Links
+- Website: https://www.aryanshakya.in
+- GitHub: https://github.com/Aryan-Shakya
+- LinkedIn: https://www.linkedin.com/in/aryan-shakya-73035a385/
+- Email: aryanshakyaofficial.mail@gmail.com
+- WhatsApp: +91 93223 11917
+
+## Technical Skills
+- **Programming Languages**: Python, JavaScript, C/C++, Java, SQL, HTML5, CSS3.
+- **Web Development**: React, Next.js, Three.js, GSAP, Node.js, Express, MongoDB, Firebase, Vercel.
+- **Robotics & Embedded Systems**: ESP32, Raspberry Pi (4, 5 & Zero 2W), Teensy, Sensor Integration, Real-time Processing, Arduino.
+- **Tools & Platforms**: Git, GitHub, VS Code, Arduino IDE, Firebase, AI-augmented development (Antigravity, Gemini, Claude).
+
+## Featured Projects
+1. **FlowRead** (https://flowread.aryanshakya.in/): An intelligent reading platform with custom themes, file uploads, and user authentication built with Next.js and MongoDB.
+2. **Smart Sensor Dashboard** (https://esp-projects-92383.web.app/): Real-time IoT dashboard visualizing live telemetry (ultrasonic, pulse, humidity) from ESP32 microcontrollers via Firebase Realtime Database.
+3. **aryanshakya.in** (https://www.aryanshakya.in): Immersive 3D portfolio featuring Three.js wireframe particle animations, GSAP scroll storytelling, and interactive command-line terminal.
+4. **Reception Desk Bot**: A local voice pipeline integrating Whisper (STT), ChromaDB semantic search (600+ Q&A entries), and llama3.2:3b deployed on a Raspberry Pi 4 with Piper TTS.
+5. **Dual-Motor Stabilization Aircraft**: Specialized flight system with dual-motor propulsion and vertical transition capabilities using custom IMU stabilization protocols.
+6. **Internet-Controlled RC Car**: Wi-Fi enabled RC car using ESP8266, Arduino, and Firebase with sub-200ms command latency.
+
+## Experience & Leadership
+- **Group Lead & Technical Intern | Rural Internship**: Organized and conducted AI-focused workshops for local schools, mentoring over 400+ students in foundational principles of using AI for education. Featured in local newspapers for community impact.
+- **Co-Founded & President | University Robotics & IoT Club (YANTRIX)**: Spearheaded the development of the "University AI Reception Assistant Robot" to streamline campus navigation.
+- **AIML Intern | Choice Tech Labs, Pune**: Engineered a Retrieval-Augmented Generation (RAG) pipeline integrating custom knowledge bases with Large Language Models (LLMs).
+- **Web Development Intern | Votiv Labs** (https://www.votivlabs.in): Contributing to enterprise-grade web solutions and performance optimization.
+
+## Blog
+Read articles on web development, IoT, and Three.js at: https://www.aryanshakya.in/blog
