@@ -75,7 +75,7 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
           }}
         >
           <div className="hero-status-dot" style={{ width: '16px', height: '16px', background: '#3B82F6' }} />
-          <span>INITIALIZING VOTIV LABS AI INTERACTIVE ROBOT...</span>
+          <span>WAKING UP VOTIV LABS AI INTERACTIVE ROBOT...</span>
         </div>
       )}
 
@@ -97,11 +97,12 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
       ) : (
         <spline-viewer
           url={sceneUrl}
+          events-target="global"
           style={{
             width: '100%',
-            height: '115%',
+            height: '120%',
             display: loaded ? 'block' : 'none',
-            transform: 'scale(1.28) translateY(-10%)',
+            transform: 'scale(1.45) translateY(-14%)',
             transformOrigin: 'center center',
           }}
         ></spline-viewer>
@@ -121,7 +122,7 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
         }}
       />
 
-      {/* Decorative clean header badge */}
+      {/* Clean header badge */}
       <div
         style={{
           position: 'absolute',
@@ -152,7 +153,7 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
           zIndex: 25,
         }}
       >
-        ● INTERACTIVE CURSOR GAZE
+        ● GLOBAL GAZE TRACKING ACTIVE
       </div>
     </div>
   );
