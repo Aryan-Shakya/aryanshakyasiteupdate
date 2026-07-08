@@ -1,13 +1,44 @@
 'use client';
 
-import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import { Robot } from './Robot';
+import React, { useEffect, useState, useRef } from 'react';
 
-export default function Robot3D() {
+export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIqEWSfKHyhm/scene.splinecode' }) {
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const scriptId = 'spline-viewer-script';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.type = 'module';
+      script.src = 'https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js';
+      script.onload = () => setLoaded(true);
+      script.onerror = () => setError(true);
+      document.head.appendChild(script);
+    } else {
+      setLoaded(true);
+    }
+
+    // Actively remove Spline watermark logo from shadowRoot
+    const interval = setInterval(() => {
+      if (!containerRef.current) return;
+      const viewer = containerRef.current.querySelector('spline-viewer');
+      if (viewer && viewer.shadowRoot) {
+        const logo = viewer.shadowRoot.querySelector('#logo');
+        if (logo) {
+          logo.remove();
+        }
+      }
+    }, 300);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
+      ref={containerRef}
       className="robot-container"
       style={{
         position: 'relative',
@@ -19,31 +50,65 @@ export default function Robot3D() {
         border: '1px solid var(--border-subtle)',
       }}
     >
-      <Canvas
-        shadows
-        gl={{ antialias: true, alpha: true }}
-      >
-        <PerspectiveCamera makeDefault position={[0, 0, 7]} fov={45} />
-        <ambientLight intensity={0.7} />
-        <directionalLight position={[10, 10, 10]} intensity={1.5} castShadow color="#ffffff" />
-        <directionalLight position={[-10, -10, -5]} intensity={0.8} color="#00f0ff" />
-        <pointLight position={[0, 2, 4]} intensity={1.2} color="#00f0ff" />
+      {!loaded && !error && (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.8rem',
+            background: 'rgba(8, 9, 14, 0.8)',
+            color: '#00F0FF',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.85rem',
+            zIndex: 20,
+          }}
+        >
+          <div className="hero-status-dot" style={{ width: '16px', height: '16px', background: '#00F0FF' }} />
+          <span>INITIALIZING VOTIV LABS 3D ROBOT CORE...</span>
+        </div>
+      )}
 
-        <Suspense fallback={null}>
-          <group position={[0, 0.6, 0]}>
-            <Robot />
-          </group>
-        </Suspense>
+      {error ? (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'var(--accent-coral)',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.85rem',
+          }}
+        >
+          [3D Scene Offline] — Please check internet connection.
+        </div>
+      ) : (
+        <spline-viewer
+          url={sceneUrl}
+          style={{ width: '100%', height: '100%', display: loaded ? 'block' : 'none' }}
+        ></spline-viewer>
+      )}
 
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          maxPolarAngle={Math.PI / 2 + 0.2}
-          minPolarAngle={Math.PI / 2 - 0.5}
-        />
-      </Canvas>
+      {/* Mask over bottom right to ensure zero watermark ever displays */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          width: '180px',
+          height: '45px',
+          background: 'transparent',
+          pointerEvents: 'none',
+          zIndex: 15,
+        }}
+      />
 
-      {/* Decorative cyber corner tags - ZERO WATERMARKS */}
+      {/* Decorative cyber corner tags */}
       <div
         style={{
           position: 'absolute',
@@ -51,7 +116,7 @@ export default function Robot3D() {
           left: '1.5rem',
           fontFamily: 'var(--font-mono)',
           fontSize: '0.7rem',
-          color: 'var(--accent-cyan)',
+          color: '#00F0FF',
           letterSpacing: '0.15em',
           pointerEvents: 'none',
           zIndex: 10,
@@ -66,13 +131,13 @@ export default function Robot3D() {
           right: '1.5rem',
           fontFamily: 'var(--font-mono)',
           fontSize: '0.65rem',
-          color: 'var(--text-secondary)',
+          color: '#94A3B8',
           letterSpacing: '0.1em',
           pointerEvents: 'none',
-          zIndex: 10,
+          zIndex: 20,
         }}
       >
-        MOVE CURSOR OR DRAG TO ROTATE
+        DRAG / ROTATE TO INTERACT
       </div>
     </div>
   );
