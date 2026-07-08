@@ -85,15 +85,15 @@ export default function RobotChatWidget() {
         <div
           onClick={() => setIsOpen(true)}
           style={{
-            background: 'var(--text-primary)',
-            color: '#FFF',
-            padding: '0.6rem 1.4rem',
+            background: '#141726',
+            color: '#FFFFFF',
+            padding: '0.65rem 1.5rem',
             borderRadius: '100px',
             fontFamily: 'var(--font-mono)',
-            fontSize: '0.8rem',
+            fontSize: '0.82rem',
             fontWeight: 800,
             boxShadow: '0 8px 25px rgba(0, 240, 255, 0.35)',
-            border: '2px solid var(--accent-cyan)',
+            border: '2px solid #00F0FF',
             cursor: 'pointer',
             transform: isHovered ? 'scale(1.05)' : 'scale(1)',
             transition: 'transform 0.2s var(--ease-out)',
@@ -103,7 +103,7 @@ export default function RobotChatWidget() {
             userSelect: 'none',
           }}
         >
-          <span style={{ color: 'var(--accent-lime)', fontSize: '0.9rem' }}>●</span>
+          <span style={{ color: '#00F0FF', fontSize: '0.9rem' }}>●</span>
           <span>TALK TO AI ASSISTANT</span>
         </div>
       )}
@@ -118,11 +118,11 @@ export default function RobotChatWidget() {
           width: '84px',
           height: '84px',
           borderRadius: '50%',
-          background: 'var(--bg-primary)',
-          border: isOpen ? '3px solid var(--accent-rose)' : '3px solid var(--accent-cyan)',
+          background: '#0D0F18',
+          border: isOpen ? '3px solid #FF0055' : '3px solid #00F0FF',
           boxShadow: isOpen
             ? '0 15px 35px rgba(255, 0, 85, 0.4)'
-            : '0 15px 35px rgba(0, 240, 255, 0.4), 0 0 25px rgba(124, 58, 237, 0.25)',
+            : '0 15px 35px rgba(0, 240, 255, 0.45)',
           cursor: 'pointer',
           position: 'relative',
           overflow: 'hidden',
@@ -134,9 +134,9 @@ export default function RobotChatWidget() {
         <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
           <Suspense fallback={<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', fontSize: '1.8rem' }}>🤖</div>}>
             <Canvas camera={{ position: [0, -0.3, 3.8], fov: 45 }}>
-              <ambientLight intensity={1.2} />
-              <directionalLight position={[5, 5, 5]} intensity={1.5} />
-              <directionalLight position={[-5, -5, -5]} intensity={0.5} />
+              <ambientLight intensity={2.0} />
+              <directionalLight position={[5, 5, 5]} intensity={2.5} color="#ffffff" />
+              <directionalLight position={[-5, -5, -5]} intensity={1.5} color="#00f0ff" />
               <Robot />
             </Canvas>
           </Suspense>

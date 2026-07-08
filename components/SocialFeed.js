@@ -78,17 +78,17 @@ export default function SocialFeed() {
             style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', color: 'inherit', transition: 'transform 0.3s ease, border-color 0.3s ease', padding: 0, overflow: 'hidden' }}
           >
             {/* Post Header */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.2rem', background: '#F8F4EC', borderBottom: '1px solid var(--border-subtle)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.2rem', background: '#141726', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: post.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', color: '#fff' }}>
                   {post.icon}
                 </div>
                 <div>
-                  <div style={{ fontWeight: 800, fontSize: '0.9rem', color: '#1A1816' }}>{post.handle}</div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: 'var(--text-secondary)', fontWeight: 600 }}>{post.date} &bull; {post.platform}</div>
+                  <div style={{ fontWeight: 800, fontSize: '0.95rem', color: '#FFFFFF' }}>{post.handle}</div>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#94A3B8', fontWeight: 600 }}>{post.date} &bull; {post.platform}</div>
                 </div>
               </div>
-              <span style={{ fontSize: '0.8rem', color: 'var(--accent-teal)', fontWeight: 800 }}>↗</span>
+              <span style={{ fontSize: '0.9rem', color: '#00F0FF', fontWeight: 800 }}>↗</span>
             </div>
 
             {/* Simulated Photo Card / Visual */}
@@ -98,11 +98,11 @@ export default function SocialFeed() {
             </div>
 
             {/* Post Caption & Engagement */}
-            <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#FFF' }}>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: '0 0 1.2rem 0', fontWeight: 500 }}>
+            <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', background: '#0D0F18', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+              <p style={{ fontSize: '0.95rem', color: '#E2E8F0', lineHeight: 1.65, margin: '0 0 1.2rem 0', fontWeight: 500 }}>
                 {post.caption}
               </p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--accent-rose)', fontWeight: 700 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: '#FF0055', fontWeight: 700 }}>
                 <span>❤️ {post.likes}</span>
                 <span>💬 {post.comments}</span>
               </div>
