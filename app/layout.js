@@ -59,31 +59,59 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* JSON-LD Structured Data */}
+        {/* Comprehensive SEO / AEO / GEO JSON-LD Schema with Sitelinks & Social Knowledge Graph */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Aryan Shakya',
-              url: 'https://www.aryanshakya.in',
-              image: 'https://www.aryanshakya.in/images/aryan.png',
-              jobTitle: 'Full Stack Developer & IoT Engineer',
-              worksFor: {
-                '@type': 'Organization',
-                name: 'Votiv Labs',
-                url: 'https://www.votivlabs.in',
-              },
-              alumniOf: {
-                '@type': 'CollegeOrUniversity',
-                name: 'Thakur College of Engineering and Technology',
-              },
-              knowsAbout: ['Web Development', 'IoT', 'React', 'Next.js', 'Three.js', 'ESP32', 'Node.js'],
-              sameAs: [
-                'https://github.com/Aryan-Shakya',
-                'https://www.linkedin.com/in/aryan-shakya-73035a385/',
-                'https://www.instagram.com/aryanshakya______/',
+              '@graph': [
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://www.aryanshakya.in/#website',
+                  url: 'https://www.aryanshakya.in',
+                  name: 'Aryan Shakya — Full Stack Developer & IoT Engineer',
+                  description: 'Official portfolio of Aryan Shakya. Full-Stack Web Developer, Creative Coder, IoT Engineer, and Founder of Votiv Labs.',
+                  publisher: { '@id': 'https://www.aryanshakya.in/#person' },
+                },
+                {
+                  '@type': 'Person',
+                  '@id': 'https://www.aryanshakya.in/#person',
+                  name: 'Aryan Shakya',
+                  url: 'https://www.aryanshakya.in',
+                  image: 'https://www.aryanshakya.in/images/aryan.png',
+                  jobTitle: 'Full Stack Web Developer, Creative Coder & IoT Engineer',
+                  description: 'Full-Stack Developer & IoT Engineer specializing in Next.js, React, Three.js, ESP32 robotics, and AI systems.',
+                  founder: {
+                    '@type': 'Organization',
+                    name: 'Votiv Labs',
+                    url: 'https://www.votivlabs.in',
+                    description: 'Freelance Web Development, AI Engineering & Custom Software Agency founded by Aryan Shakya',
+                  },
+                  worksFor: {
+                    '@type': 'Organization',
+                    name: 'Votiv Labs',
+                    url: 'https://www.votivlabs.in',
+                  },
+                  sameAs: [
+                    'https://github.com/Aryan-Shakya',
+                    'https://www.linkedin.com/in/aryan-shakya-73035a385/',
+                    'https://www.instagram.com/aryanshakya______/',
+                    'https://www.votivlabs.in',
+                  ],
+                  knowsAbout: ['Web Development', 'IoT', 'React', 'Next.js', 'Three.js', 'ESP32', 'Node.js', 'AI Engineering', 'Votiv Labs'],
+                },
+                {
+                  '@type': 'SiteNavigationElement',
+                  name: ['About Aryan Shakya', 'Technical Skills & IoT', 'Featured Projects', 'Tech & IoT Engineering Blog', 'Votiv Labs Freelance Agency'],
+                  url: [
+                    'https://www.aryanshakya.in/#about',
+                    'https://www.aryanshakya.in/#skills',
+                    'https://www.aryanshakya.in/#projects',
+                    'https://www.aryanshakya.in/blog',
+                    'https://www.votivlabs.in',
+                  ],
+                },
               ],
             }),
           }}
