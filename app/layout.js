@@ -4,11 +4,11 @@ import ClientRobotWidget from '@/components/ClientRobotWidget';
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aryanshakya.in'),
   title: {
-    default: 'Aryan Shakya — Developer & Creator',
-    template: '%s | Aryan Shakya',
+    default: 'Aryan Shakya | Founder of Votiv Labs — Full Stack & IoT Engineer',
+    template: '%s | Aryan Shakya — Votiv Labs',
   },
-  description: 'Full-stack developer, creative coder & IoT engineer building digital experiences that shift perception. Based in India.',
-  keywords: ['Aryan Shakya', 'Full Stack Developer', 'IoT Engineer', 'Creative Coder', 'Next.js Developer', 'Portfolio', 'Web Developer India', 'React Developer'],
+  description: 'Official portfolio of Aryan Shakya, Founder of Votiv Labs (www.votivlabs.in). Full-stack web developer, creative coder & IoT engineer building Next.js, Three.js, and AI robotics systems.',
+  keywords: ['Aryan Shakya', 'Votiv Labs', 'Founder Votiv Labs', 'Full Stack Developer', 'IoT Engineer', 'Creative Coder', 'Next.js Developer', 'Aryan Shakya Pune', 'Web Developer India', 'React Developer'],
   authors: [{ name: 'Aryan Shakya', url: 'https://www.aryanshakya.in' }],
   creator: 'Aryan Shakya',
   publisher: 'Aryan Shakya',
@@ -49,7 +49,7 @@ export const metadata = {
     canonical: 'https://www.aryanshakya.in',
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || undefined,
   },
 };
 
