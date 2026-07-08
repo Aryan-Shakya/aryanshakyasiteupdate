@@ -13,7 +13,7 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
       const script = document.createElement('script');
       script.id = scriptId;
       script.type = 'module';
-      script.src = 'https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js';
+      script.src = 'https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js';
       script.onload = () => setLoaded(true);
       script.onerror = () => setError(true);
       document.head.appendChild(script);
@@ -50,11 +50,11 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
         position: 'relative',
         width: '100%',
         height: '580px',
-        background: '#EAECEF',
+        background: '#E8ECEF',
         borderRadius: '24px',
         overflow: 'hidden',
         border: '1px solid #D1D5DB',
-        boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)',
+        boxShadow: '0 25px 50px rgba(0, 0, 0, 0.35)',
       }}
     >
       {!loaded && !error && (
@@ -67,7 +67,7 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
             alignItems: 'center',
             justifyContent: 'center',
             gap: '0.8rem',
-            background: '#EAECEF',
+            background: '#E8ECEF',
             color: '#1F2937',
             fontFamily: 'var(--font-mono)',
             fontSize: '0.85rem',
@@ -75,7 +75,7 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
           }}
         >
           <div className="hero-status-dot" style={{ width: '16px', height: '16px', background: '#3B82F6' }} />
-          <span>WAKING UP VOTIV LABS AI INTERACTIVE ROBOT...</span>
+          <span>LOADING VOTIV LABS AI INTERACTIVE ROBOT...</span>
         </div>
       )}
 
@@ -100,9 +100,9 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
           events-target="global"
           style={{
             width: '100%',
-            height: '120%',
+            height: '100%',
             display: loaded ? 'block' : 'none',
-            transform: 'scale(1.45) translateY(-14%)',
+            transform: 'scale(2.0) translateY(-26%)',
             transformOrigin: 'center center',
           }}
         ></spline-viewer>
@@ -116,7 +116,7 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
           right: 0,
           width: '210px',
           height: '52px',
-          background: 'linear-gradient(135deg, transparent 0%, #EAECEF 50%)',
+          background: 'linear-gradient(135deg, transparent 0%, #E8ECEF 50%)',
           pointerEvents: 'none',
           zIndex: 15,
         }}
