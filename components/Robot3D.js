@@ -1,61 +1,127 @@
 'use client';
 
-import React, { Suspense, useState, useEffect } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import { Robot } from './Robot';
+import React, { useEffect, useState, useRef } from 'react';
 
-export default function Robot3D() {
-  const [mounted, setMounted] = useState(false);
+export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIqEWSfKHyhm/scene.splinecode' }) {
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    setMounted(true);
+    const scriptId = 'spline-viewer-script';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script');
+      script.id = scriptId;
+      script.type = 'module';
+      script.src = 'https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js';
+      script.onload = () => setLoaded(true);
+      script.onerror = () => setError(true);
+      document.head.appendChild(script);
+    } else {
+      setLoaded(true);
+    }
+
+    // Actively remove Spline watermark logo from shadowRoot
+    const cleanShadowDom = () => {
+      if (!containerRef.current) return;
+      const viewer = containerRef.current.querySelector('spline-viewer');
+      if (viewer && viewer.shadowRoot) {
+        const logo = viewer.shadowRoot.querySelector('#logo');
+        if (logo) logo.remove();
+
+        if (!viewer.shadowRoot.querySelector('#no-watermark-style')) {
+          const style = document.createElement('style');
+          style.id = 'no-watermark-style';
+          style.innerHTML = '#logo, a[class*="logo"] { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }';
+          viewer.shadowRoot.appendChild(style);
+        }
+      }
+    };
+
+    const interval = setInterval(cleanShadowDom, 150);
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <div
+      ref={containerRef}
       className="robot-container"
       style={{
         position: 'relative',
         width: '100%',
         height: '580px',
-        background: 'radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.12) 0%, rgba(15, 17, 26, 0.95) 75%)',
+        background: '#EAECEF',
         borderRadius: '24px',
         overflow: 'hidden',
-        border: '1px solid rgba(0, 240, 255, 0.3)',
-        boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6), inset 0 0 50px rgba(0, 240, 255, 0.08)',
+        border: '1px solid #D1D5DB',
+        boxShadow: '0 25px 50px rgba(0, 0, 0, 0.25)',
       }}
     >
-      {mounted && (
-        <Canvas
-          shadows
-          gl={{ antialias: true, alpha: true }}
-          style={{ width: '100%', height: '100%', display: 'block' }}
+      {!loaded && !error && (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.8rem',
+            background: '#EAECEF',
+            color: '#1F2937',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.85rem',
+            zIndex: 20,
+          }}
         >
-          <PerspectiveCamera makeDefault position={[0, 0, 5.2]} fov={42} />
-
-          {/* Studio Lighting for High-Contrast Cyber Metal & Neon Cyan Accents */}
-          <ambientLight intensity={1.5} />
-          <directionalLight position={[6, 8, 6]} intensity={2.4} castShadow color="#ffffff" />
-          <directionalLight position={[-6, -4, -4]} intensity={1.4} color="#00f0ff" />
-          <pointLight position={[0, 2, 4]} intensity={1.8} color="#00f0ff" />
-
-          <Suspense fallback={null}>
-            <group position={[0, 0.15, 0]} scale={[1.15, 1.15, 1.15]}>
-              <Robot />
-            </group>
-          </Suspense>
-
-          <OrbitControls
-            enableZoom={false}
-            enablePan={false}
-            maxPolarAngle={Math.PI / 2 + 0.15}
-            minPolarAngle={Math.PI / 2 - 0.4}
-          />
-        </Canvas>
+          <div className="hero-status-dot" style={{ width: '16px', height: '16px', background: '#3B82F6' }} />
+          <span>INITIALIZING VOTIV LABS AI INTERACTIVE ROBOT...</span>
+        </div>
       )}
 
-      {/* Decorative cyber corner tags - SLEEK DARK OBSIDIAN THEME */}
+      {error ? (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'var(--accent-coral)',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.85rem',
+          }}
+        >
+          [3D Scene Offline] — Please check internet connection.
+        </div>
+      ) : (
+        <spline-viewer
+          url={sceneUrl}
+          style={{
+            width: '100%',
+            height: '115%',
+            display: loaded ? 'block' : 'none',
+            transform: 'scale(1.28) translateY(-10%)',
+            transformOrigin: 'center center',
+          }}
+        ></spline-viewer>
+      )}
+
+      {/* Cover over bottom right corner to ensure 100% zero watermark visibility */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          width: '210px',
+          height: '52px',
+          background: 'linear-gradient(135deg, transparent 0%, #EAECEF 50%)',
+          pointerEvents: 'none',
+          zIndex: 15,
+        }}
+      />
+
+      {/* Decorative clean header badge */}
       <div
         style={{
           position: 'absolute',
@@ -63,14 +129,14 @@ export default function Robot3D() {
           left: '1.5rem',
           fontFamily: 'var(--font-mono)',
           fontSize: '0.75rem',
-          color: '#00F0FF',
+          color: '#1F2937',
           fontWeight: 800,
           letterSpacing: '0.15em',
           pointerEvents: 'none',
           zIndex: 20,
         }}
       >
-        [ AI CYBERNETIC CORE // ARYAN SHAKYA x VOTIV LABS ]
+        [ AI CYBERNETIC CORE // VOTIV LABS ]
       </div>
       <div
         style={{
@@ -78,15 +144,15 @@ export default function Robot3D() {
           bottom: '1.5rem',
           right: '1.8rem',
           fontFamily: 'var(--font-mono)',
-          fontSize: '0.75rem',
-          color: '#00F0FF',
+          fontSize: '0.7rem',
+          color: '#4B5563',
           fontWeight: 700,
           letterSpacing: '0.1em',
           pointerEvents: 'none',
           zIndex: 25,
         }}
       >
-        ● CURSOR GAZE ACTIVE
+        ● INTERACTIVE CURSOR GAZE
       </div>
     </div>
   );
