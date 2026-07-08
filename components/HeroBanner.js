@@ -1,8 +1,10 @@
 'use client';
 
 import React from 'react';
-import Robot3D from '@/components/Robot3D';
+import dynamic from 'next/dynamic';
 import { ComicBadge, DoodleStar, DoodleSparkle } from '@/components/Doodles';
+
+const Robot3D = dynamic(() => import('@/components/Robot3D'), { ssr: false });
 
 export default function HeroBanner({ hero }) {
   return (

@@ -1,5 +1,5 @@
 import './globals.css';
-import RobotChatWidget from '@/components/RobotChatWidget';
+import ClientRobotWidget from '@/components/ClientRobotWidget';
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aryanshakya.in'),
@@ -135,7 +135,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
-        <RobotChatWidget />
+        <ClientRobotWidget />
       </body>
     </html>
   );

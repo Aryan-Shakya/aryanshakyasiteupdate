@@ -1,19 +1,21 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import Preloader from '@/components/Preloader';
 import CustomCursor from '@/components/CustomCursor';
-import NoiseOverlay from '@/components/NoiseOverlay';
 import Navigation from '@/components/Navigation';
 import HeroBanner from '@/components/HeroBanner';
 import ChatbotTerminal from '@/components/ChatbotTerminal';
 import ResumeBar from '@/components/ResumeBar';
 import TechLogos from '@/components/TechLogos';
-import ScrapbookSection from '@/components/ScrapbookSection';
-import HarryPotterGame from '@/components/HarryPotterGame';
-import SocialFeed from '@/components/SocialFeed';
-import DinoGame from '@/components/DinoGame';
 import { DoodleArrow, DoodleStar, DoodleSparkle, DoodleUnderline, ComicBadge } from '@/components/Doodles';
+
+const NoiseOverlay = dynamic(() => import('@/components/NoiseOverlay'), { ssr: false });
+const ScrapbookSection = dynamic(() => import('@/components/ScrapbookSection'), { ssr: false });
+const HarryPotterGame = dynamic(() => import('@/components/HarryPotterGame'), { ssr: false });
+const SocialFeed = dynamic(() => import('@/components/SocialFeed'), { ssr: false });
+const DinoGame = dynamic(() => import('@/components/DinoGame'), { ssr: false });
 
 export default function HomeClient({ initialData }) {
   const [data, setData] = useState(initialData);

@@ -7,24 +7,10 @@ export default function Preloader({ onComplete }) {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    let current = 0;
-    const interval = setInterval(() => {
-      current += Math.random() * 18;
-      if (current >= 100) {
-        current = 100;
-        clearInterval(interval);
-        setTimeout(() => {
-          setDone(true);
-          document.body.classList.remove('loading');
-          if (onComplete) onComplete();
-        }, 400);
-      }
-      setProgress(Math.floor(current));
-    }, 80);
-
-    document.body.classList.add('loading');
-
-    return () => clearInterval(interval);
+    setProgress(100);
+    setDone(true);
+    document.body.classList.remove('loading');
+    if (onComplete) onComplete();
   }, [onComplete]);
 
   return (
