@@ -4,11 +4,11 @@ import ClientRobotWidget from '@/components/ClientRobotWidget';
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.aryanshakya.in'),
   title: {
-    default: 'Aryan Shakya | Founder of Votiv Labs — Full Stack & IoT Engineer',
-    template: '%s | Aryan Shakya — Votiv Labs',
+    default: 'Aryan Shakya | Full Stack & IoT Engineer — VotivLabs',
+    template: '%s | Aryan Shakya — VotivLabs',
   },
-  description: 'Official portfolio of Aryan Shakya, Founder of Votiv Labs (www.votivlabs.in). Full-stack web developer, creative coder & IoT engineer building Next.js, Three.js, and AI robotics systems.',
-  keywords: ['Aryan Shakya', 'Votiv Labs', 'Founder Votiv Labs', 'Full Stack Developer', 'IoT Engineer', 'Creative Coder', 'Next.js Developer', 'Aryan Shakya Pune', 'Web Developer India', 'React Developer'],
+  description: 'Official portfolio of Aryan Shakya — Full-stack web developer, creative coder & IoT engineer building Next.js, Three.js, and AI robotics systems (VotivLabs).',
+  keywords: ['Aryan Shakya', 'VotivLabs', 'Votiv Labs', 'Full Stack Developer', 'IoT Engineer', 'Creative Coder', 'Next.js Developer', 'Aryan Shakya Pune', 'Web Developer India', 'React Developer'],
   authors: [{ name: 'Aryan Shakya', url: 'https://www.aryanshakya.in' }],
   creator: 'Aryan Shakya',
   publisher: 'Aryan Shakya',
@@ -71,7 +71,7 @@ export default function RootLayout({ children }) {
                   '@id': 'https://www.aryanshakya.in/#website',
                   url: 'https://www.aryanshakya.in',
                   name: 'Aryan Shakya — Full Stack Developer & IoT Engineer',
-                  description: 'Official portfolio of Aryan Shakya. Full-Stack Web Developer, Creative Coder, IoT Engineer, and Founder of Votiv Labs.',
+                  description: 'Official portfolio of Aryan Shakya. Full-Stack Web Developer, Creative Coder, and IoT Engineer.',
                   publisher: { '@id': 'https://www.aryanshakya.in/#person' },
                 },
                 {
@@ -82,15 +82,14 @@ export default function RootLayout({ children }) {
                   image: 'https://www.aryanshakya.in/images/aryan.png',
                   jobTitle: 'Full Stack Web Developer, Creative Coder & IoT Engineer',
                   description: 'Full-Stack Developer & IoT Engineer specializing in Next.js, React, Three.js, ESP32 robotics, and AI systems.',
-                  founder: {
-                    '@type': 'Organization',
-                    name: 'Votiv Labs',
-                    url: 'https://www.votivlabs.in',
-                    description: 'Freelance Web Development, AI Engineering & Custom Software Agency founded by Aryan Shakya',
-                  },
                   worksFor: {
                     '@type': 'Organization',
-                    name: 'Votiv Labs',
+                    name: 'VotivLabs',
+                    url: 'https://www.votivlabs.in',
+                  },
+                  affiliation: {
+                    '@type': 'Organization',
+                    name: 'VotivLabs',
                     url: 'https://www.votivlabs.in',
                   },
                   sameAs: [

@@ -72,7 +72,7 @@ export default function HeroBanner({ hero }) {
             WHERE CODE<br />MEETS <em style={{ color: 'var(--accent-teal)' }}>ROBOTICS</em>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '1.5rem', fontWeight: 500 }}>
-            {hero?.description || "Full-stack developer, creative coder, and IoT engineer. Founder of Votiv Labs. When I'm not configuring microcontrollers or designing 3D web experiences, I'm exploring new realms in creative AI, photography, and music."}
+            {hero?.description || "Full-stack developer, creative coder, and IoT engineer collaborating with VotivLabs. When I'm not configuring microcontrollers or designing 3D web experiences, I'm exploring new realms in creative AI, photography, and music."}
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <div style={{ padding: '0.8rem 1.2rem', background: 'rgba(255, 0, 85, 0.1)', borderLeft: '4px solid var(--accent-rose)', borderRadius: '4px' }}>

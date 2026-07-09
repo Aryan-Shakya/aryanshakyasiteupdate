@@ -11,8 +11,8 @@
 - Email: aryanshakyaofficial.mail@gmail.com
 - WhatsApp: +91 93223 11917
 
-## Freelance Agency & Startup: Votiv Labs (https://www.votivlabs.in)
-Aryan Shakya is the founder and lead developer at **Votiv Labs**, a specialized freelance web development, AI engineering, and IoT software consultancy. Votiv Labs builds high-performance Next.js applications, custom 3D web experiences, and integrated hardware/software telemetry systems for enterprise clients and startups worldwide.
+## Collaborations & Agency Projects: VotivLabs (https://www.votivlabs.in)
+Aryan Shakya is a Lead Full-Stack Developer & AI Systems Engineer collaborating with **VotivLabs**, a specialized web development, AI engineering, and IoT software consultancy. VotivLabs builds high-performance Next.js applications, custom 3D web experiences, and integrated hardware/software telemetry systems for enterprise clients and startups worldwide.
 
 ## Technical Skills
 - **Programming Languages**: Python, JavaScript, C/C++, Java, SQL, HTML5, CSS3.
@@ -24,13 +24,13 @@ Aryan Shakya is the founder and lead developer at **Votiv Labs**, a specialized 
 1. **FlowRead** (https://flowread.aryanshakya.in/): An intelligent reading platform with custom themes, file uploads, and user authentication built with Next.js and MongoDB.
 2. **Smart Sensor Dashboard** (https://esp-projects-92383.web.app/): Real-time IoT dashboard visualizing live telemetry (ultrasonic, pulse, humidity) from ESP32 microcontrollers via Firebase Realtime Database.
 3. **aryanshakya.in** (https://www.aryanshakya.in): Immersive 3D portfolio featuring Three.js wireframe particle animations, GSAP scroll storytelling, and interactive command-line terminal.
-4. **Votiv Labs** (https://www.votivlabs.in): High-performance freelance web development & AI software consultancy founded by Aryan Shakya.
+4. **VotivLabs** (https://www.votivlabs.in): High-performance web development & AI software agency collaborated with Aryan Shakya.
 5. **Reception Desk Bot**: A local voice pipeline integrating Whisper (STT), ChromaDB semantic search (600+ Q&A entries), and llama3.2:3b deployed on a Raspberry Pi 4 with Piper TTS.
 6. **Dual-Motor Stabilization Aircraft**: Specialized flight system with dual-motor propulsion and vertical transition capabilities using custom IMU stabilization protocols.
 7. **Internet-Controlled RC Car**: Wi-Fi enabled RC car using ESP8266, Arduino, and Firebase with sub-200ms command latency.
 
 ## Experience & Leadership
-- **Founder & Lead Developer | Votiv Labs** (https://www.votivlabs.in): Delivering custom full-stack web applications, 3D interactive interfaces, and AI/IoT solutions.
+- **Lead Full-Stack Developer | VotivLabs** (https://www.votivlabs.in): Delivering custom full-stack web applications, 3D interactive interfaces, and AI/IoT solutions.
 - **Group Lead & Technical Intern | Rural Internship**: Organized and conducted AI-focused workshops for local schools, mentoring over 400+ students in foundational principles of using AI for education. Featured in local newspapers for community impact.
 - **Co-Founded & President | University Robotics & IoT Club (YANTRIX)**: Spearheaded the development of the "University AI Reception Assistant Robot" to streamline campus navigation.
 - **AIML Intern | Choice Tech Labs, Pune**: Engineered a Retrieval-Augmented Generation (RAG) pipeline integrating custom knowledge bases with Large Language Models (LLMs).
