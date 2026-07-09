@@ -11,6 +11,15 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
   useEffect(() => {
     if (!canvasRef.current) return;
     let app = null;
+    let reqId = null;
+
+    // Global mouse tracking across window
+    const mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+    const handleMouseMove = (e) => {
+      mouse.targetX = (e.clientX / window.innerWidth) * 2 - 1;
+      mouse.targetY = -(e.clientY / window.innerHeight) * 2 + 1;
+    };
+    window.addEventListener('mousemove', handleMouseMove);
 
     try {
       app = new Application(canvasRef.current);
@@ -20,10 +29,20 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
           setLoading(false);
           window.splineApp = app;
 
-          // Ensure the robot stands upright immediately on first load and does not sleep horizontally
-          if (app._scene) {
-            app._scene.rotation.x = 0.42;
-          }
+          // Animation loop to keep robot upright and dynamically track mouse without sleeping horizontally
+          const lockUprightAndSway = () => {
+            reqId = requestAnimationFrame(lockUprightAndSway);
+
+            mouse.x += (mouse.targetX - mouse.x) * 0.08;
+            mouse.y += (mouse.targetY - mouse.y) * 0.08;
+
+            if (app && app._scene) {
+              // Lock X rotation upright around 0.42 base pitch + gentle mouse parallax sway
+              app._scene.rotation.x = 0.42 + mouse.y * 0.12;
+              app._scene.rotation.y = mouse.x * 0.22;
+            }
+          };
+          lockUprightAndSway();
         })
         .catch((err) => {
           console.error('Error loading Spline scene:', err);
@@ -37,6 +56,8 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
     }
 
     return () => {
+      if (reqId) cancelAnimationFrame(reqId);
+      window.removeEventListener('mousemove', handleMouseMove);
       if (app && app.dispose) {
         app.dispose();
       }
@@ -104,7 +125,7 @@ export default function Robot3D({ sceneUrl = 'https://prod.spline.design/DJ9EUIq
           height: '100%',
           display: 'block',
           outline: 'none',
-          pointerEvents: 'none',
+          cursor: 'grab',
         }}
       />
 
